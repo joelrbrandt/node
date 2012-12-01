@@ -611,7 +611,7 @@
         'openssl/engines/e_ubsec.c'
       ],
       'conditions': [
-        ['target_arch!="ia32" and target_arch!="x64"', {
+        ['(target_arch!="ia32" and target_arch!="x64") or output_type=="shared_library"', {
           # Disable asm
           'defines': [
             'OPENSSL_NO_ASM'
